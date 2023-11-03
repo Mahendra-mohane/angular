@@ -12,16 +12,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'user-registration-form'`, () => {
+  it(`should have as title 'user-validation'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('user-registration-form');
+    expect(app.title).toEqual('user-validation');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('user-registration-form app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('user-validation app is running!');
   });
 });

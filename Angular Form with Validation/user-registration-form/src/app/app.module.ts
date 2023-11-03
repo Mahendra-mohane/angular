@@ -1,22 +1,26 @@
-import { NgModule } from '@angular/core';
+import { NgModule, OnInit } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { UserFormComponent } from './user-form/user-form.component';
+import { initFlowbite } from 'flowbite';
+import { MyFormComponent } from './my-form/my-form.component';
 import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    UserFormComponent
-  ],
+  declarations: [AppComponent, MyFormComponent],
   imports: [
     BrowserModule,
     FormsModule,
-    CommonModule
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule implements OnInit {
+  ngOnInit(): void {
+    initFlowbite();
+  }
+}
